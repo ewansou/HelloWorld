@@ -3,8 +3,8 @@ name: Simple Start Up
 on:
   push:
     branches: [main]
-  scheudle:
-    - con: '* * * * *'
+  schedule:
+    - cron: '* * * * *'
     
 jobs:
   my-job:

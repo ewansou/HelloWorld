@@ -2,7 +2,7 @@ package main
 
 // Add two numbers and return the results
 func Add(a, b int) int {
-	return a + b
+	return a + b + b
 }
 
 // Subtract two numbers and return the result.

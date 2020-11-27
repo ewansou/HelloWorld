@@ -1,0 +1,20 @@
+name: 'Sending SMS Notification'
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+ sms-job:
+    name: SMS Notification
+    steps:
+    - name: Send out SMS via Twilio
+      uses: twilio-labs/actions-sms@v1
+      with:
+        fromPhoneNumber: '+1(234)5678901'
+        toPhoneNumber: '+6597801671'
+        message: 'New codes are being pushed up'
+      env:
+        TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+        TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+        TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}

@@ -1,4 +1,4 @@
-name:  Whatsapp Notify
+name:  Whatsapp/SMS Notify
 on:
   issue_comment:
     types: created
@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: wa-notify
+      - name: Sending WhatsApp Notifcation
         uses: mdb571/wa-action@master
         with:
           from: ${{ secrets.FROM }}
@@ -25,3 +25,13 @@ jobs:
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_AUTH_TOKEN: ${{ secrets.TWILIO_AUTH }}
+      - name: Sending SMS Notification
+        uses: twilio-labs/actions-sms@v1
+        with:
+          fromPhoneNumber: '+1(234)5678901'
+          toPhoneNumber: '+6597801671'
+          message: 'Hello from Twilio'
+        env:
+          TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
+          TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}
+          TWILIO_API_SECRET: ${{ secrets.TWILIO_API_SECRET }}

@@ -1,4 +1,4 @@
-- name: 'Sending SMS Notification'
+name: 'Sending SMS Notification'
   uses: twilio-labs/actions-sms@v1
   with:
     fromPhoneNumber: '+1(234)5678901'

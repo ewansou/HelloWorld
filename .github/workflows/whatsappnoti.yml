@@ -9,6 +9,8 @@ on:
   page_build:
   watch:
     types: [started]
+  push:
+    branches: [main]
 
 jobs:
   build:

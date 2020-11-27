@@ -1,0 +1,16 @@
+name: Simple Start Up
+
+on:
+  push:
+    branches: [main]
+  scheudle:
+    - con: '* * * * *'
+    
+jobs:
+  my-job:
+    name: My Job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Print a greeting
+      run:  |
+        echo Hello there!!

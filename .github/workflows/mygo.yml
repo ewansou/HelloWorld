@@ -1,15 +1,20 @@
-name: 'Setup Go environment'
-description: 'Setup a Go environment and add it to the PATH'
-author: 'GitHub'
-inputs: 
-  go-version:
-    description: 'The Go version to download (if necessary) and use. Supports semver spec and ranges.'
-  stable:
-    description: 'Whether to download only stable versions'
-    default: 'true'
-  token:
-    description: Used to pull node distributions from go-versions.  Since there's a default, this is typically not supplied by the user.
-    default: ${{ github.token }}
-runs:
-  using: 'node12'
-  main: 'dist/index.js'
+name: Set up go environment
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  
+jobs:
+  build:
+    runs-on: ubuntu-16.04
+    steps:
+      - name: Check out Code
+        uses: actions/checkout@v2
+      - name: Setup go
+        uses: actions/setup-go@v2
+        with:
+          go-version: '1.13.7'
+      - name: Run version check
+        run: go version

@@ -1,5 +1,3 @@
-# HelloWorld
+# GoSchool - Microservices 2 Test Repo (Activity #2)
 
-This is a new feature
-
-Hello! Ewan!
+Build and Test using YML and Github Actions

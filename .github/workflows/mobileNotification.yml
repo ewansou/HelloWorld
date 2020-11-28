@@ -22,7 +22,7 @@ jobs:
         with:
           fromPhoneNumber: '+1(201)9052180'
           toPhoneNumber: '+6597801671'
-          message: 'Hello you have a new PUSH to github/HelloWorld'
+          message: 'Hello you have a new change to github/HelloWorld'
         env:
           TWILIO_ACCOUNT_SID: ${{ secrets.TWILIO_ACCOUNT_SID }}
           TWILIO_API_KEY: ${{ secrets.TWILIO_API_KEY }}

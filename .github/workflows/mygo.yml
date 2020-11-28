@@ -46,3 +46,18 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           files: report.xml
+      - name: Run scaling step
+        id: scale
+        uses: turtlesec-no/scale-images@v1.0
+        with:
+          image-folder: 'project-images'
+        - name: Commit image files
+        working-directory: project-images
+        run: | 
+        git config user.email "ewansou@hotmail.com"
+        git config user.name "ewansou"
+        if [[ "$( git status --porcelain)" != "" ]]; then
+          git add -A
+          git commit -m "Updated image files"
+          git push
+        fi 

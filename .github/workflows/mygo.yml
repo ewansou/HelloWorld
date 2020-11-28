@@ -50,7 +50,7 @@ jobs:
         id: scale
         uses: turtlesec-no/scale-images@v1.0
         with:
-          image-folder: 'project-images'
+          image-folder: project-images
         - name: Commit image files
         working-directory: project-images
         run: | 
